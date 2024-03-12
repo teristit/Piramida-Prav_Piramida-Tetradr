@@ -1,8 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <list>
-
 
 class Piramida {
 protected:
