@@ -21,7 +21,7 @@ public:
     {
         Piramida::setr3(a);
     }
-    static double Tetradrarea(double a, double b, double c)
+    static double Tetradr_area(double a, double b, double c)
     {
         double p = (a + b + c) / 2;
         return sqrt(p * (p - a) * (p - b) * (p - c));
@@ -34,17 +34,17 @@ public:
     {
         return ((pow(rib1, 3) * sqrt(2)) / 12);
     }
-    double sidesurface()
+    double side_surface()
     {
         return Tetradrarea(base3, rib1, rib2) + Tetradrarea(base2, rib1, rib3) + Tetradrarea(base1, rib2, rib3);
     }
 };
 
-int main()
-{
 
-    return 0;
-}
+
+
+
+
 
 
 
