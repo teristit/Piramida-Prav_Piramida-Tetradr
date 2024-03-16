@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 class Tetradr : public Piramida
 {
 public:
@@ -48,14 +47,6 @@ public:
         return Tetradrarea(base3, rib1, rib2) + Tetradrarea(base2, rib1, rib3) + Tetradrarea(base1, rib2, rib3);
     }
 };
-
-
-
-
-
-
-
-
 
 
 
