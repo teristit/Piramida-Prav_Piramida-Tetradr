@@ -21,7 +21,7 @@ public:
     }
     virtual void set(double a, double b, double c, double d, double e, double f){
         rib1 = a;
-        rib2 - b;
+        rib2 = b;
         rib3 = c;
         base1 = d;
         base2 = e;
