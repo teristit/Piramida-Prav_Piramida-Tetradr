@@ -26,6 +26,9 @@ public:
         rib1 = a;
         rib2 = a;
         rib3 = a;
+        base1 = a;
+        base2 = a;
+        base3 = a;
     }
     static double Tetradr_area(double a, double b, double c)
     {
