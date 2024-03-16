@@ -21,6 +21,12 @@ public:
     {
         Piramida::setr3(a);
     }
+    void set(double a)
+    {
+        rib1 = a;
+        rib2 = a;
+        rib3 = a;
+    }
     static double Tetradr_area(double a, double b, double c)
     {
         double p = (a + b + c) / 2;
