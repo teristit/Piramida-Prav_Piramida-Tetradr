@@ -37,7 +37,7 @@ public:
     }
     double area() override
     {
-        return Tetradrarea(base1, base2, base3) + Tetradrarea(base3, rib1, rib2) + Tetradrarea(base2, rib1, rib3) + Tetradrarea(base1, rib2, rib3);
+        return Tetradr_area(base1, base2, base3) + Tetradr_area(base3, rib1, rib2) + Tetradr_area(base2, rib1, rib3) + Tetradr_area(base1, rib2, rib3);
     }
     double volume()
     {
@@ -45,10 +45,9 @@ public:
     }
     double side_surface()
     {
-        return Tetradrarea(base3, rib1, rib2) + Tetradrarea(base2, rib1, rib3) + Tetradrarea(base1, rib2, rib3);
+        return Tetradr_area(base3, rib1, rib2) + Tetradr_area(base2, rib1, rib3) + Tetradr_area(base1, rib2, rib3);
     }
 };
-
 
 
 
