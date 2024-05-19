@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Piramida.h>
 #include <iostream>
 #include <cmath>
 

@@ -1,13 +1,14 @@
-#include <iostream>
 #include <Piramida.h>
 #include <Tetradr.h>
 #include <Prav_Piramida.h>
+#include <iostream>
+using namespace figure;
 /// Kurshin
 void piramidamenu() {
-	figure::Piramida object;
+	Piramida object;
 	int userchoise = -1;
-	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны пирамиды\n" << "2: Ввести ребро\n" 
-		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести пирамиду\n";
+	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны пирамиды\n" << "2: Ввести ребро\n"
+		<< "3: Ввести основание\n" << "4: Вывести обьём пирамиды \n" << "5: Вывести пирамиду\n";
 	while (std::cin >> userchoise) {
 		switch (userchoise)
 		{
@@ -17,7 +18,7 @@ void piramidamenu() {
 			std::cout << "Введите строны пирамиды (3 ребра, 3 основания)\n";
 			double r1, r2, r3, b1, b2, b3;
 			std::cin >> r1 >> r2 >> r3 >> b1 >> b2 >> b3;
-			object.set(r1,r2,r3,b1,b2,b3);
+			object.set(r1, r2, r3, b1, b2, b3);
 			break;
 		case 2:
 			int temp;
@@ -74,15 +75,81 @@ void piramidamenu() {
 				break;
 			default:
 				std::cout << "Нет такого основания\n";
-					break;
+				break;
 			}
 		}
 			  break;
-		case 4: 
-			std::cout<<object.area();
+		case 4:
+			std::cout << object.area();
 			break;
 		case 5:
 			object.show();
+			break;
+		default:
+			std::cout << "Нет такого действия\n";
+			break;
+		}
+	}
+}
+void tetradrmenu() {
+	Tetradr object;
+	int userchoise = -1;
+	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны тетраедра\n" << "2: Ввести ребро\n"
+		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести обьём пирамиды\n" << "6: Вывести боковую поверность\n";
+	while (std::cin >> userchoise) {
+		switch (userchoise)
+		{
+		case 0:
+			return;
+		case 1:
+			std::cout << "Введите строны пирамиды (3 ребра, 3 основания)\n";
+			double num;
+			std::cin >> num;
+			object.set(num);
+			break;
+		case 2:
+			int temp;
+			std::cout << "Введите номер ребра для ввода (1-3)\n";
+			std::cin >> temp;
+			switch (temp)
+			{
+			case 1:
+				std::cout << "Введите длину\n";
+				double temp;
+				std::cin >> temp;
+				object.setr1(temp);
+				break;
+			case 2:
+				std::cout << "Введите длину\n";
+				double temp;
+				std::cin >> temp;
+				object.setr2(temp);
+				break;
+			case 3:
+				std::cout << "Введите длину\n";
+				double temp;
+				std::cin >> temp;
+				object.setr3(temp);
+				break;
+			default:
+				std::cout << "Нет такого ребра\n";
+				break;
+			}
+			break;
+		case 3: {
+			object.show();
+			break;
+		}
+			  break;
+		case 4:
+			std::cout << object.area();
+			break;
+		case 5:
+			std::cout << object.volume();
+			break;
+		case 6:
+			std::cout << object.side_surface();
+			break;
 		default:
 			std::cout << "Нет такого действия\n";
 			break;
@@ -101,7 +168,7 @@ void mainmenu() {
 			piramidamenu();
 			return;
 		case 2:
-			///тетраед меню
+			tetradrmenu();
 			return;
 		case 3:
 			///правильная пирамида меню
@@ -111,4 +178,8 @@ void mainmenu() {
 			break;
 		}
 	}
+}
+
+int main() {
+	mainmenu();
 }
