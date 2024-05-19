@@ -17,7 +17,7 @@ namespace figure {
             std::cout << "Deleted";
         }
         virtual void show() {
-            std::cout << rib1 << " " << rib2 << " " << rib3 << " " << base1 << " " << base2 << " " << base3;
+            std::cout << rib1 << " " << rib2 << " " << rib3 << " " << base1 << " " << base2 << " " << base3 <<" \n";
         }
         virtual void set(double a, double b, double c, double d, double e, double f) {
             rib1 = a;
