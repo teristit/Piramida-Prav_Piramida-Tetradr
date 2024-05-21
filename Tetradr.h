@@ -4,6 +4,7 @@
 #include <cmath>
 
 using namespace std;
+using namespace figure;
 
 class Tetradr : public Piramida
 {
@@ -48,9 +49,3 @@ public:
         return Tetradr_area(base3, rib1, rib2) + Tetradr_area(base2, rib1, rib3) + Tetradr_area(base1, rib2, rib3);
     }
 };
-
-
-
-
-
-
