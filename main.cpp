@@ -4,7 +4,7 @@
 #include <iostream>
 /// Kurshin
 void piramidamenu() {
-	Piramida object;
+	Piramida <double> object ;
 	int userchoise = -1;
 	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны пирамиды\n" << "2: Ввести ребро\n"
 		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести пирамиду\n";
@@ -88,7 +88,7 @@ void piramidamenu() {
 	}
 }
 void tetradrmenu() {
-	Tetradr object;
+	Tetradr <double> object;
 	int userchoise = -1;
 	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны тетраедра\n" << "2: Ввести ребро\n"
 		<< "3: Ввести стороны тетраедра\n" << "4: Вывести площадь тетраедра \n" << "5: Вывести обьём тетраедра\n" << "6: Вывести боковую поверность\n";
@@ -137,7 +137,7 @@ void tetradrmenu() {
 		}
 			  break;
 		case 4:
-			std::cout << object.area() <<"\n";
+			std::cout << object.area() << "\n";
 			break;
 		case 5:
 			std::cout << object.volume() << "\n";
@@ -153,10 +153,10 @@ void tetradrmenu() {
 }
 
 void pravpiramidamenu() {
-	Tetradr object;
+	Prav_Piramida <double> object;
 	int userchoise = -1;
 	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны тетраедра\n"
-		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести обьём пирамиды\n" << "6: Вывести боковую поверность\n";
+		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести площадь пирамиды\n" << "6: Вывести боковую площадь\n";
 	while (std::cin >> userchoise) {
 		switch (userchoise)
 		{
@@ -164,26 +164,32 @@ void pravpiramidamenu() {
 			return;
 		case 1:
 			std::cout << "Введите строны пирамиды (ребра, основание)\n";
+			double num1, num2;
+			std::cin >> num1 >> num2;
+			object.set(num1,num2);
+			break;
+
+		case 2:
+			std::cout << "Введите ребра прав пирамиды(один параметр)";
 			double num;
 			std::cin >> num;
-			
-			double num1;
-			std::cin >> num1;
-			object.set(num, num1);
+			object.set_ribs(num);
 			break;
-		case 3: {
+		case 3:
+			std::cout << "Введите освнования прав пирамиды(один параметр)";
+			double num4;
+			std::cin >> num4;
+			object.set_bases(num4);
+			break;
+		case 4: {
 			object.show();
 			break;
 		}
-			  break;
-		case 4:
+		case 5:
 			std::cout << object.area();
 			break;
-		case 5:
-			std::cout << object.volume();
-			break;
 		case 6:
-			std::cout << object.side_surface();
+			std::cout << object.side_area();
 			break;
 		default:
 			std::cout << "Нет такого действия\n";
