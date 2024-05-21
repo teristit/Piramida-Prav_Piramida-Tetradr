@@ -5,24 +5,24 @@
 
 using namespace std;
 using namespace figure;
-
-class Tetradr : public Piramida
+template <typename T>
+class Tetradr : public Piramida <T>
 {
 public:
     using Piramida::Piramida;
-    void setr1(double a) override
+    void setr1(T a) override
     {
         Piramida::setr1(a);
     }
-    void setr2(double a) override
+    void setr2(T a) override
     {
         Piramida::setr2(a);
     }
-    void setr3(double a) override
+    void setr3(T a) override
     {
         Piramida::setr3(a);
     }
-    void set(double a)
+    void set(T a)
     {
         rib1 = a;
         rib2 = a;
@@ -31,20 +31,20 @@ public:
         base2 = a;
         base3 = a;
     }
-    static double Tetradr_area(double a, double b, double c)
+    static T Tetradr_area(T a, T b, T c)
     {
         double p = (a + b + c) / 2;
         return sqrt(p * (p - a) * (p - b) * (p - c));
     }
-    double area() override
+    T area() override
     {
         return Tetradr_area(base1, base2, base3) + Tetradr_area(base3, rib1, rib2) + Tetradr_area(base2, rib1, rib3) + Tetradr_area(base1, rib2, rib3);
     }
-    double volume()
+    T volume()
     {
         return ((pow(rib1, 3) * sqrt(2)) / 12);
     }
-    double side_surface()
+    T side_surface()
     {
         return Tetradr_area(base3, rib1, rib2) + Tetradr_area(base2, rib1, rib3) + Tetradr_area(base1, rib2, rib3);
     }
