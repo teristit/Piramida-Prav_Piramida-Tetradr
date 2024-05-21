@@ -1,4 +1,8 @@
+#pragma once
 #include "Piramida.h"
+
+using namespace figure;
+
 class Prav_Piramida:public Piramida
 {
 private:
