@@ -151,6 +151,46 @@ void tetradrmenu() {
 		}
 	}
 }
+
+void pravpiramidamenu() {
+	Tetradr object;
+	int userchoise = -1;
+	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны тетраедра\n"
+		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести обьём пирамиды\n" << "6: Вывести боковую поверность\n";
+	while (std::cin >> userchoise) {
+		switch (userchoise)
+		{
+		case 0:
+			return;
+		case 1:
+			std::cout << "Введите строны пирамиды (ребра, основание)\n";
+			double num;
+			std::cin >> num;
+			
+			double num1;
+			std::cin >> num1;
+			object.set(num, num1);
+			break;
+		case 3: {
+			object.show();
+			break;
+		}
+			  break;
+		case 4:
+			std::cout << object.area();
+			break;
+		case 5:
+			std::cout << object.volume();
+			break;
+		case 6:
+			std::cout << object.side_surface();
+			break;
+		default:
+			std::cout << "Нет такого действия\n";
+			break;
+		}
+	}
+}
 void mainmenu() {
 	int type;
 	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Пирамида \n" << "2: Тетраедр\n" << "3: Правильная пирамида\n";
