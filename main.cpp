@@ -7,86 +7,86 @@ using namespace figure;
 void piramidamenu() {
 	Piramida object;
 	int userchoise = -1;
-	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны пирамиды\n" << "2: Ввести ребро\n"
-		<< "3: Ввести основание\n" << "4: Вывести обьём пирамиды \n" << "5: Вывести пирамиду\n";
+	std::cout << "Р—РґСЂР°РІСЃС‚РІР№С‚Рµ, РІС‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n" << "0: Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹\n" << "1: Р’РІРµСЃС‚Рё СЃС‚РѕСЂРѕРЅС‹ РїРёСЂР°РјРёРґС‹\n" << "2: Р’РІРµСЃС‚Рё СЂРµР±СЂРѕ\n" 
+		<< "3: Р’РІРµСЃС‚Рё РѕСЃРЅРѕРІР°РЅРёРµ\n" << "4: Р’С‹РІРµСЃС‚Рё РѕР±СЊС‘Рј РїРёСЂР°РјРёРґС‹ \n" << "5: Р’С‹РІРµСЃС‚Рё РїРёСЂР°РјРёРґСѓ\n";
 	while (std::cin >> userchoise) {
 		switch (userchoise)
 		{
 		case 0:
 			return;
 		case 1:
-			std::cout << "Введите строны пирамиды (3 ребра, 3 основания)\n";
+			std::cout << "Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРЅС‹ РїРёСЂР°РјРёРґС‹ (3 СЂРµР±СЂР°, 3 РѕСЃРЅРѕРІР°РЅРёСЏ)\n";
 			double r1, r2, r3, b1, b2, b3;
 			std::cin >> r1 >> r2 >> r3 >> b1 >> b2 >> b3;
-			object.set(r1, r2, r3, b1, b2, b3);
+			object.set(r1,r2,r3,b1,b2,b3);
 			break;
 		case 2:
 			int temp;
-			std::cout << "Введите номер ребра для ввода (1-3)\n";
+			std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЂРµР±СЂР° РґР»СЏ РІРІРѕРґР° (1-3)\n";
 			std::cin >> temp;
 			switch (temp)
 			{
 			case 1:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr1(temp);
 				break;
 			case 2:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr2(temp);
 				break;
 			case 3:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr3(temp);
 				break;
 			default:
-				std::cout << "Нет такого ребра\n";
+				std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ СЂРµР±СЂР°\n";
 				break;
 			}
 			break;
 		case 3: {
 			int temp;
-			std::cout << "Выберите основание для ввода (1-3)\n";
+			std::cout << "Р’С‹Р±РµСЂРёС‚Рµ РѕСЃРЅРѕРІР°РЅРёРµ РґР»СЏ РІРІРѕРґР° (1-3)\n";
 			std::cin >> temp;
 			switch (temp)
 			{
 			case 1:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setb1(temp);
 				break;
 			case 2:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setb2(temp);
 				break;
 			case 3:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setb3(temp);
 				break;
 			default:
-				std::cout << "Нет такого основания\n";
-				break;
+				std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ РѕСЃРЅРѕРІР°РЅРёСЏ\n";
+					break;
 			}
 		}
 			  break;
-		case 4:
-			std::cout << object.area();
+		case 4: 
+			std::cout<<object.area();
 			break;
 		case 5:
 			object.show();
 			break;
 		default:
-			std::cout << "Нет такого действия\n";
+			std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ РґРµР№СЃС‚РІРёСЏ\n";
 			break;
 		}
 	}
@@ -94,45 +94,45 @@ void piramidamenu() {
 void tetradrmenu() {
 	Tetradr object;
 	int userchoise = -1;
-	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Ввести стороны тетраедра\n" << "2: Ввести ребро\n"
-		<< "3: Ввести основание\n" << "4: Вывести площадь пирамиды \n" << "5: Вывести обьём пирамиды\n" << "6: Вывести боковую поверность\n";
+	std::cout << "Р—РґСЂР°РІСЃС‚РІР№С‚Рµ, РІС‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n" << "0: Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹\n" << "1: Р’РІРµСЃС‚Рё СЃС‚РѕСЂРѕРЅС‹ С‚РµС‚СЂР°РµРґСЂР°\n" << "2: Р’РІРµСЃС‚Рё СЂРµР±СЂРѕ\n"
+		<< "3: Р’РІРµСЃС‚Рё РѕСЃРЅРѕРІР°РЅРёРµ\n" << "4: Р’С‹РІРµСЃС‚Рё РїР»РѕС‰Р°РґСЊ РїРёСЂР°РјРёРґС‹ \n" << "5: Р’С‹РІРµСЃС‚Рё РѕР±СЊС‘Рј РїРёСЂР°РјРёРґС‹\n" << "6: Р’С‹РІРµСЃС‚Рё Р±РѕРєРѕРІСѓСЋ РїРѕРІРµСЂРЅРѕСЃС‚СЊ\n";
 	while (std::cin >> userchoise) {
 		switch (userchoise)
 		{
 		case 0:
 			return;
 		case 1:
-			std::cout << "Введите строны пирамиды (3 ребра, 3 основания)\n";
+			std::cout << "Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРЅС‹ РїРёСЂР°РјРёРґС‹ (3 СЂРµР±СЂР°, 3 РѕСЃРЅРѕРІР°РЅРёСЏ)\n";
 			double num;
 			std::cin >> num;
 			object.set(num);
 			break;
 		case 2:
 			int temp;
-			std::cout << "Введите номер ребра для ввода (1-3)\n";
+			std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЂРµР±СЂР° РґР»СЏ РІРІРѕРґР° (1-3)\n";
 			std::cin >> temp;
 			switch (temp)
 			{
 			case 1:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr1(temp);
 				break;
 			case 2:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr2(temp);
 				break;
 			case 3:
-				std::cout << "Введите длину\n";
+				std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ\n";
 				double temp;
 				std::cin >> temp;
 				object.setr3(temp);
 				break;
 			default:
-				std::cout << "Нет такого ребра\n";
+				std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ СЂРµР±СЂР°\n";
 				break;
 			}
 			break;
@@ -151,14 +151,14 @@ void tetradrmenu() {
 			std::cout << object.side_surface();
 			break;
 		default:
-			std::cout << "Нет такого действия\n";
+			std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ РґРµР№СЃС‚РІРёСЏ\n";
 			break;
 		}
 	}
 }
 void mainmenu() {
 	int type;
-	std::cout << "Здравствйте, выберите действие:\n" << "0: Выход из программы\n" << "1: Пирамида \n" << "2: Тетраедр\n" << "3: Правильная пирамида\n";
+	std::cout << "Р—РґСЂР°РІСЃС‚РІР№С‚Рµ, РІС‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n" << "0: Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹\n" << "1: РџРёСЂР°РјРёРґР° \n" << "2: РўРµС‚СЂР°РµРґСЂ\n" << "3: РџСЂР°РІРёР»СЊРЅР°СЏ РїРёСЂР°РјРёРґР°\n";
 	while (std::cin >> type) {
 		switch (type)
 		{
@@ -171,10 +171,10 @@ void mainmenu() {
 			tetradrmenu();
 			return;
 		case 3:
-			///правильная пирамида меню
+			///РїСЂР°РІРёР»СЊРЅР°СЏ РїРёСЂР°РјРёРґР° РјРµРЅСЋ
 			return;
 		default:
-			std::cout << "Нет такого типа";
+			std::cout << "РќРµС‚ С‚Р°РєРѕРіРѕ С‚РёРїР°";
 			break;
 		}
 	}
